@@ -31,32 +31,20 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  This document contains the instructions for preparing a camera-ready
-  manuscript for the proceedings of ACL-2013. The document itself
-  conforms to its own specifications, and is therefore an example of
-  what your manuscript should look like. These instructions should be used for both
-  papers submitted for review and for final versions of accepted
-  papers.  Authors are asked to conform
-  to all the directions reported in this document. 
+Get a concise introduction to Jasmine, the popular testing framework for JavaScript. This document shows you how to write unit tests with Jasmine that automatically check for bugs in your application using the Test-Driven development pattern and the Karma test runner. After you get an overview of test-driven development, learn how to write specifications for individual components, and then use those specs to test the code you write. Write useful specs by determining what you need to test and what you don’t. Test the behavior of new and existing code against the specs you create. Apply Jasmine matchers and discover how to build your own. Organize code suites into groups and subgroups as your code becomes more complex. Use a Jasmine spy in place of a function or an object and learn why it’s valuable.
 \end{abstract}
 
 \section{Credits}
 
-This document has been adapted from the instructions for earlier ACL proceedings, including those for ACL-2012 by Maggie Li and Michael White, those from ACL-2010 by Jing-Shing Chang and Philipp Koehn, those for ACL-2008 by Johanna D. Moore, Simone Teufel, James Allan, and Sadaoki Furui, those for ACL-2005 by Hwee Tou Ng and Kemal Oflazer, those for ACL-2002 by Eugene Charniak and Dekang Lin, and earlier ACL and EACL formats. Those versions were written by several people, including John Chen, Henry S. Thompson and Donald Walker. Additional elements were taken from the formatting instructions of the {\em International Joint Conference on Artificial Intelligence}.
+This document has been wrote on the basis of some external Internet links and a presentation of Christopher Bartling about JavaScript tests with Jasmine and Karma. The statistics to illustrate the importance of JavaScript today come from studies of diverse companies like TIOBE software. A detailed presentation of the Jasmine library was inspired by the online documentation on the official Jasmine website. 
 
-\section{Introduction}
+\section{Motivation for Javascript TDD}
 
-The following instructions are directed to authors of papers submitted
-to ACL-2013 or accepted
-for publication in its proceedings. All authors are required
-to adhere to these specifications. Authors are required to provide a
-Portable Document Format (PDF) 
-% das: removed reference to PostScript
-% and PostScript 
-version of their papers. \textbf{The proceedings will be printed on A4
-  paper}. Authors from countries in which access to word-processing
-systems is limited should contact the publication chairs Roberto Navigli
-(\texttt{navigli@di.uniroma1.it}) and Jing-Shin Chang (\texttt{jshin@csie.ncnu.edu.tw}) as soon as possible.
+Today, Javascript is growing in popularity and will continue to grow. As show in the Abbildung 1, from 1996 to 2016, JavaScript is from the 23th to the 7th position of the most used programming languages. JavaScript is also used all over the place, and is used even with every backend language. This programming language is also the most commonly used in frontend development to dynamically give more user experience to web applications. JS-libraries are used for the development of web and mobile applications with JQuery Mobile/PhoneGap. Famous libraries like Angular.js, jQuery, Node.js, React and various others tools inherit JavaScript. Some hardware engineer are using JavaScript to do embedded programming so that JavaScript can be used for the direct communication with the outside world by using MicroControllers and other electronics related stuff, although this is definitely less common at the moment. This is why JavaScript is such a good language to learn. (https://www.quora.com/When-do-developers-use-JavaScript-and-why).
+
+A software product has to be considered like every other commercial product and it quality must be tested. This is also valid for javaScript Software. In the software engineering, we are talking about Code Quality. Code quality is a loose approximation of how long-term useful and long-term maintainable the code is. If the Code is thrown away tomorrow is mean that this Code has a Low quality. High quality Code is being carried over from product to product, developed further, maybe even open sourced after establishing is value. The software quality is defined with a clear and understandable design and implementation and also well defined interfaces. Good Code is ease to build and use and have to be extensible. The minimum extra dependencies and the good documentation are very important criteria for Software Quality. One off he most important criteria are the tests: Unit, integration, and functional/acceptance testing. (https://www.quora.com/How-do-you-define-code-quality)
+
+In this context of Code Quality and Unit Testing in JavaScript, Test-driven development (TDD) is the new trend. TDD is a new way to software development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring. What is the primary goal of TDD? One view is the goal of TDD is specification and not validation (Martin, Newkirk, and Kess 2003). In other words, it’s one way to think through your requirements or design before your write your functional code (implying that TDD is both an important agile requirements and agile design technique). Another view is that TDD is a programming technique. As Ron Jeffries likes to say, the goal of TDD is to write clean code that works. I think that there is merit in both arguments, although I lean towards the specification view, but I leave it for you to decide. 
 
 \section{General Instructions}
 
@@ -381,5 +369,6 @@ Dan Gusfield.
 \end{thebibliography}
 
 \end{document}
+\grid
 \grid
 \grid

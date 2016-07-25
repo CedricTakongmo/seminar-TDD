@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.22)  25 JUL 2016 14:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.22)  25 JUL 2016 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/home/cedric.takongmo/masterSeminar/CI-Paper/acl2013
-(/home/cedric.takongmo/masterSeminar/CI-Paper/acl2013.tex
+**/home/cedric.takongmo/masterSeminar/CI-Paper/seminar-TDD/acl2013
+(/home/cedric.takongmo/masterSeminar/CI-Paper/seminar-TDD/acl2013.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -72,76 +72,87 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 32.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 1259) in paragraph at lines 49--60
-\OT1/ptm/m/n/10.95 Doc-u-ment For-mat (PDF) ver-sion of their pa-
+Underfull \hbox (badness 1173) in paragraph at lines 45--46
+\OT1/ptm/m/n/10.95 tra de-pen-den-cies and the good doc-u-men-ta-tion
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 76.
-
-Underfull \hbox (badness 4341) in paragraph at lines 76--89
-\OT1/ptm/m/n/10.95 (acl2013.tex) and PDF for-mat (acl2013.pdf),
- []
-
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 133.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 64.
+
+Underfull \hbox (badness 4341) in paragraph at lines 64--77
+\OT1/ptm/m/n/10.95 (acl2013.tex) and PDF for-mat (acl2013.pdf),
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 121.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 121.
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 []\OT1/ptm/m/n/10.95 ``We pre-vi-ously showed (Gus-field,
  []
 
 
-Underfull \hbox (badness 1152) in paragraph at lines 282--285
+Underfull \hbox (badness 1152) in paragraph at lines 270--273
 []\OT1/ptm/m/n/10.95 The L[]T[]X and BibT[]X style files pro-vided
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 297.
+(Font)              <9> on input line 285.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 297.
+(Font)              <5> on input line 285.
 
-Underfull \hbox (badness 1142) in paragraph at lines 303--308
+Underfull \hbox (badness 1142) in paragraph at lines 291--296
 \OT1/ptm/b/n/10.95 Illustrations\OT1/ptm/m/n/10.95 : Place fig-ures, ta-bles, a
 nd pho-
  []
 
-[3]
-Underfull \hbox (badness 1466) in paragraph at lines 335--340
+
+Underfull \hbox (badness 1466) in paragraph at lines 323--328
 \OT1/ptm/m/n/10.95 will be pub-licly avail-able at ACL An-thol-ogy
  []
 
-[4] (./acl2013.aux) ) 
+[4] [5
+
+] (./acl2013.aux) ) 
 Here is how much of TeX's memory you used:
  495 strings out of 493085
- 6270 string characters out of 6136917
- 65095 words of memory out of 5000000
+ 6306 string characters out of 6136917
+ 64095 words of memory out of 5000000
  4008 multiletter control sequences out of 15000+600000
  27055 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,9n,19p,744b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on acl2013.pdf (4 pages, 81038 bytes).
+ 23i,9n,19p,1104b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
+es/utmri8a.pfb>
+Output written on acl2013.pdf (5 pages, 82891 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+ 41 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
