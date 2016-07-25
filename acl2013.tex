@@ -46,69 +46,35 @@ A software product has to be considered like every other commercial product and 
 
 In this context of Code Quality and Unit Testing in JavaScript, Test-driven development (TDD) is the new trend. TDD is a new way to software development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring. What is the primary goal of TDD? One view is the goal of TDD is specification and not validation (Martin, Newkirk, and Kess 2003). In other words, it’s one way to think through your requirements or design before your write your functional code (implying that TDD is both an important agile requirements and agile design technique). Another view is that TDD is a programming technique. As Ron Jeffries likes to say, the goal of TDD is to write clean code that works. I think that there is merit in both arguments, although I lean towards the specification view, but I leave it for you to decide. 
 
-\section{General Instructions}
+\section{Test-driven development cycle}
 
-Manuscripts must be in two-column format.  Exceptions to the
-two-column format include the title, authors' names and complete
-addresses, which must be centered at the top of the first page, and
-any full-width figures or tables (see the guidelines in
-Subsection~\ref{ssec:first}). {\bf Type single-spaced.}  Start all
-pages directly under the top margin. See the guidelines later
-regarding formatting the first page.  The manuscript should be
-printed single-sided and its length
-should not exceed the maximum page limit described in Section~\ref{sec:length}.
-Do not number the pages.
+TDD can be described with this simple formula: TDD = The steps of test first development (TFD) + a Refactoring. TFD are overviewed in the UML activity diagram of Abbildung 2. With this approach a test should be quickly added. Normally just enough code to fail. After that the tests should be run, often the complete test suite although for sake of speed you may decide to run only a subset, to ensure that the new test does in fact fail. Then, You update your functional code to make it should pass the new tests. The fourth step is to run your tests again. If they fail you need to update your functional code and retest. Once the tests pass the next step is to start over (you may first need to refactor any duplication out of your design as needed, turning TFD into TDD) (http://agiledata.org/essays/tdd.html )
 
-\subsection{Electronically-available resources}
+\section{Benefits of TDD}
 
-ACL 2013 provides this description in \LaTeX2e (acl2013.tex) and PDF
-format (acl2013.pdf), along with the \LaTeX2e style file used to
-format it (acl2013.sty) and an ACL bibliography style
-(acl.bst). These files are all available at
-\url{http://www.acl2013.org}. A Microsoft Word
-template file (acl2013.dot) is also available at the same URL. We
-strongly recommend the use of these style files, which have been
-appropriately tailored for the ACL 2013 proceedings. If you have an
-option, we recommend that you use the \LaTeX2e version. \textbf{If you will be
-using the Microsoft Word template, we suggest that you anonymize your
-source file so that the pdf produced does not retain your identity.}
-This can be done by removing any personal information from your source
-document properties.
+TDD enables you to take small steps when writing software. This is the most important thing of this concept. This practice is far more productive than attempting to code in large steps. For example, assume some new functional code have been added to code, compiled, and tested. Chances are important that your tests will be broken by defects that exist in the new code. It is much easier to find, and then fix, those defects if you've written two new lines of code than two thousand. The implication is that the faster your compiler and regression test suite, the more attractive it is to proceed in smaller and smaller steps. I generally prefer to add a few new lines of functional code, typically less than ten, before I recompile and rerun my tests.
 
 
 
-\subsection{Format of Electronic Manuscript}
-\label{sect:pdf}
+\section{Karma}
 
-For the production of the electronic manuscript you must use Adobe's
-Portable Document Format (PDF). This format can be generated from
-postscript files. On Linux/Unix systems, you can use {\tt ps2pdf} for
-this purpose. In Microsoft Windows, you can use Adobe's Distiller,
-or if you have \textit{cygwin}
-installed, you can use \textit{dvipdf} or \textit{ps2pdf}. Note that
-some word processing programs generate PDF which may not include all
-the necessary fonts (esp. tree diagrams, symbols). When you print or
-create the PDF file, there is usually an option in your printer setup
-to include none, all or just non-standard fonts.  Please make sure
-that you select the option of including ALL the fonts. {\em Before
-sending it, test your PDF by printing it from a computer different
-from the one where it was created.} Moreover, some word processors may
-generate very large postscript/PDF files, where each page is rendered
-as an image. Such images may reproduce poorly. In this case, try
-alternative ways to obtain the postscript and/or PDF. One way on some
-systems is to install a driver for a postscript printer, send your
-document to the printer specifying ``Output to a file'', then convert
-the file to PDF.
+Karma is a test runner for JavaScript that runs on Node.js. It is very well suited to testing any JavaScript projects. Using Karma to run tests using one of many popular JavaScript testing suites (Jasmine, QUnit, Mocha, etc.) and have those tests executed not only in the browsers of your choice, but also on any platform (desktop, phone, tablet.) Karma is highly configurable, integrates with popular continuous integration packages (Jenkins, Travis, and Semaphore) and has excellent plugin support. (http://www.methodsandtools.com/tools/karma.php ) Karma is an Open Source distribution and actually in the version 1.0.
 
-It is of utmost importance to specify the \textbf{A4 format} (21 cm
-x 29.7 cm) when formatting the paper. When working with
-{\tt dvips}, for instance, one should specify {\tt -t a4}.
+\begin{itemize}
+\item Installation - Karma requires Node.js and the Node Package Manager (NPM). So we can install Karma with the simple command:
 
-Print-outs of the PDF file on A4 paper should be identical to the
-hardcopy version. If you cannot meet the above requirements about the
-production of your electronic submission, please contact the
-publication chairs above as soon as possible.
+\textdollar{} npm install -g karma
+\item Configuration - A configuration file have first to be created. Then Karma can do what you want. This configuration file can be a JavaScript or a CoffeeScript file. The configuration file can be created manually or generated step by step via the command line:
 
+\textdollar{} karma init
+
+In this way, the created configuration file is then as follows:
+\item Application - Karma is started on the console with the following command:
+
+\textdollar{} karma start [path/to/config/file.js]
+
+All tests are now performed and Karma wait for code changes. while tests succeed, Karma will automatically start another test run. In the case of faulty test the result will be show in the console. In this case karma waits for an update or correction of JavaScript code. (https://blog.mayflower.de/4333-Karma-Testrunner-Einfuehrung.html )
+\end{itemize}
 
 \subsection{Layout}
 \label{ssec:layout}
@@ -369,6 +335,5 @@ Dan Gusfield.
 \end{thebibliography}
 
 \end{document}
-\grid
 \grid
 \grid

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.22)  25 JUL 2016 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.22)  25 JUL 2016 15:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -91,55 +91,79 @@ Missing character: There is no ™ in font ptmr7t!
 
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 64.
-
-Underfull \hbox (badness 4341) in paragraph at lines 64--77
-\OT1/ptm/m/n/10.95 (acl2013.tex) and PDF for-mat (acl2013.pdf),
+Underfull \hbox (badness 3354) in paragraph at lines 61--62
+\OT1/ptm/m/n/10.95 tests us-ing one of many pop-u-lar JavaScript
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 121.
 
+Underfull \hbox (badness 2409) in paragraph at lines 61--62
+\OT1/ptm/m/n/10.95 test-ing suites (Jas-mine, QUnit, Mocha, etc.)
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 61--62
+\OT1/ptm/m/n/10.95 con-fig-urable, in-te-grates with pop-u-lar con-tin-u-
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 61--62
+\OT1/ptm/m/n/10.95 Semaphore) and has ex-cel-lent plu-gin sup-port.
+ []
+
+
+Overfull \hbox (6.19646pt too wide) in paragraph at lines 61--62
+\OT1/ptm/m/n/10.95 (http://www.methodsandtools.com/tools/karma.php
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 64.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 121.
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+\OT1/ptm/m/n/10.95 (https://blog.mayflower.de/4333-Karma-
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+[2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 110.
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 []\OT1/ptm/m/n/10.95 ``We pre-vi-ously showed (Gus-field,
  []
 
 
-Underfull \hbox (badness 1152) in paragraph at lines 270--273
+Underfull \hbox (badness 1152) in paragraph at lines 236--239
 []\OT1/ptm/m/n/10.95 The L[]T[]X and BibT[]X style files pro-vided
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 285.
+(Font)              <9> on input line 251.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 285.
+(Font)              <5> on input line 251.
 
-Underfull \hbox (badness 1142) in paragraph at lines 291--296
+Underfull \hbox (badness 1142) in paragraph at lines 257--262
 \OT1/ptm/b/n/10.95 Illustrations\OT1/ptm/m/n/10.95 : Place fig-ures, ta-bles, a
 nd pho-
  []
 
-
-Underfull \hbox (badness 1466) in paragraph at lines 323--328
+[4]
+Underfull \hbox (badness 1466) in paragraph at lines 289--294
 \OT1/ptm/m/n/10.95 will be pub-licly avail-able at ACL An-thol-ogy
  []
 
-[4] [5
+[5
 
 ] (./acl2013.aux) ) 
 Here is how much of TeX's memory you used:
- 495 strings out of 493085
- 6306 string characters out of 6136917
- 64095 words of memory out of 5000000
- 4008 multiletter control sequences out of 15000+600000
+ 494 strings out of 493085
+ 6296 string characters out of 6136917
+ 65095 words of memory out of 5000000
+ 4007 multiletter control sequences out of 15000+600000
  27055 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  23i,9n,19p,1104b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -149,7 +173,7 @@ hare/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on acl2013.pdf (5 pages, 82891 bytes).
+Output written on acl2013.pdf (5 pages, 81324 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
