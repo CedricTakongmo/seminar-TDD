@@ -20,6 +20,43 @@
 \usepackage{latexsym}
 \usepackage{graphicx}  
 \graphicspath{ {img/} }
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
 %\setlength\titlebox{6.5cm}    % You can expand the title box if you
 % really have to
 
@@ -34,6 +71,7 @@
 \maketitle
 \begin{abstract}
 Get a concise introduction to Jasmine, the popular testing framework for JavaScript. This document shows you how to write unit tests with Jasmine that automatically check for bugs in your application using the Test-Driven development pattern and the Karma test runner. After you get an overview of test-driven development, learn how to write specifications for individual components, and then use those specs to test the code you write. Write useful specs by determining what you need to test and what you don’t. Test the behavior of new and existing code against the specs you create. Apply Jasmine matchers and discover how to build your own. Organize code suites into groups and subgroups as your code becomes more complex. Use a Jasmine spy in place of a function or an object and learn why it’s valuable.
+
 \end{abstract}
 
 \section{Credits}
@@ -72,6 +110,67 @@ Karma is a test runner for JavaScript that runs on Node.js. It is very well suit
 \textdollar{} karma init
 
 In this way, the created configuration file is then as follows:
+
+\begin{lstlisting}[caption=Karma configuration file ]
+       module.exports = function(config) {  
+           config.set({  
+               //  root path location that will be used to resolve  
+               //all relative paths in files and exclude sections,  
+               //should be the root of your project  
+               basePath: '../',  
+         
+               // files to include, ordered by dependencies  
+               files: [  
+               // include relevant Angular files and libs  
+               'app/lib/angular/angular.js',  
+               'test/lib/angular/angular-mocks.js',  
+     
+               // include js files  
+               'app/js/app.js',  
+     
+               // include unit test specs  
+               'test/unit/*.js'  
+           ],  
+           // files to exclude  
+           exclude: [  
+            'app/lib/angular/angular-loader.js',  
+               'app/lib/angular/*.min.js',  
+               'app/lib/angular/angular-scenario.js'  
+           ],  
+     
+           // karma has its own autoWatch feature but  
+           //Grunt watch can also do this  
+           autoWatch: false,  
+     
+           // testing framework, be sure to install  
+           //the karma plugin  
+           frameworks: ['jasmine'],  
+     
+           // browsers to test against, be sure to install   
+           //the correct karma browser launcher plugin  
+           browsers: ['Chrome', 'PhantomJS', 'Firefox'],  
+     
+           // progress is the default reporter  
+           reporters: ['progress'],  
+     
+           // map of preprocessors that is used mostly   
+           //for plugins  
+           preprocessors: {  
+     
+           },  
+     
+           // list of karma plugins  
+           plugins: [  
+               'karma-junit-reporter',  
+               'karma-chrome-launcher',  
+               'karma-firefox-launcher',  
+               'karma-jasmine',  
+               'karma-phantomjs-launcher'  
+           ]  
+       })  
+   }  
+\end{lstlisting}
+
 \item Application - Karma is started on the console with the following command:
 
 \textdollar{} karma start [path/to/config/file.js]
@@ -117,9 +216,35 @@ Jasmine is an open source Javascript Unit Test Framework. It is behavior-driven 
 
 A test suite represents a group of specifications. The global Jasmine function describe defines a test suite. This function takes two parameters: a string and a closure. The title or name for a spec suite is defined by the string. It is usually what is being tested. A block of code that will be implemented will be wrote in the function.
 
+\begin{lstlisting}[caption=Suites example]
+       'use strict';  
+         
+       describe('A specification suite for Controller: MainCtrl', function () {  
+         
+           ...  
+         
+       });  
+\end{lstlisting}
+
 \subsection{Specs}
 
 The global jasmine function „it“ define specs. This function, like „describe“ takes a string and a function. The title of the spec is defined by the string and the function is the spec, or test. One or more expectations that verify the state of the code are contained in a spec. In Jasmine an expectation is an assertion. This assertion can be true or false. A passing spec is a spec with all true expectations. A falling spec is rather a spec with one or more false expectations. 
+
+\begin{lstlisting}[caption=Specs example]
+       describe('Controller: StackCtrl: describes an abstract data' +  
+                'type that serves as a collection of elements', function () {  
+            
+           it('specEmpty: if this stack is empty; Returns "true"' +  
+              ' only if this stack don t contains  items; "false" otherwise', function () {  
+         
+               scope.stack = [{ firstname: "Peter", lastName: "Schneider"}];  
+               expect(scope.isEmpty()).toBe(false);  
+               scope.stack = [];  
+           expect(scope.isEmpty()).toBe(true);      
+         
+      });  
+   });  
+\end{lstlisting}
 
 Because the „describe“ and „it“ are function, ana executable code necessary to implement the spec can be defined in these blocks. So variables declared in a describe are available to any it block inside the suite.
 
@@ -155,9 +280,85 @@ The fail function brings a spec to fail. A failure message or an Error object ca
 
 Custom matching code can be defined using Jasmine. A custom matcher can be defined as a comparison function, which take an „actual“ value and an „expected“ value. Then the custom factory should be passed to Jasmine. The best practice to do that is to pass it in the „beforeEach“ and it will be in scope and available for all of the specs inside a given call to „describe“. Custom matchers are destroyed between specs. The name of the factory will be the name of the matcher exposed on the return value of the call to „expect“. This object has a custom matcher named “toBeGoofy”. 
 
+\begin{lstlisting}[caption=Custom matchers]
+function compare(actual, expected) {
+    var result = {};
+    result.pass = actual <
+        expected;
+    if (result.pass === false) {
+        result.message = function() {
+            return "Expected " +
+                actual +
+                " not to be less than " +
+                expected;
+        };
+    } else {
+        result.message =
+            function() {
+                return "";
+            };
+    }
+    return result;
+}
+beforeEach(function() {
+    jasmine.addMatchers({
+        toBeLessThan: function() {
+            return {
+                compare: compare
+            }
+        }
+    });
+});
+
+...
+
+it('Custum matchers', function() {
+    expect(2).toBeLessThan(3);
+});
+\end{lstlisting}
+
 \subsection{Setup and Teardown}
 
 Related specs can be grouped by the „describe“ function. The string parameter is for naming the collection of specs, and will be concatenated with specs to make a spec’s full name. This is usefull in finding specs in a large suite. specs can be read as full sentences in traditional BDD style, if they are good named in the test blocks. Any duplicated setup and teardown code can be implemented in the global „beforeEach“, „afterEach“, „beforeAll“ and „afterAll“ functions. The „beforeEach“ function is called in the „describe“ in which it is called once before each spec. The „afterEach“ function is used once after each spec.
+
+\begin{lstlisting}[caption=Setup and Teardown]
+describe('StackCtrl', function() {
+
+    var scope;
+
+    beforeEach(function() {
+
+        scope = new StackCtrl();
+        scope.stack = [{
+            firstname: "Cedric",
+            lastName: "Takongmo"
+        }, {
+            firstname: "Peter",
+            lastName: "Schneider"
+        }];
+
+    });
+
+    afterEach(function() {
+        scope = null;
+    });
+
+    it('specIsEmpty', function() {
+
+        expect(scope.isEmpty()).toBe(false);
+        scope.stack = [];
+        expect(scope.isEmpty()).toBe(true);
+
+    });
+    it('specPush', function() {
+        Scope.push({
+            firstname: "Teddy",
+            lastName: "Ricardo"
+        });…
+    });
+
+});
+\end{lstlisting}
 
 The Abbildung 4 represents an example for „beforeEach“ and „afterEach“. In this case a state will be give to the „scope“ object we want to test before each test. Jasmine calls the „beforeAll“ function only once before all the specs in the test suite are run, and the „afterAll“ after all specs finish. These functions can be used to speed up test suites with expensive setup and teardown. Through the „this“ keyword variables between a „beforeEach“, „it“, and „afterEach“ function can be shared. Each spec’s „beforeEach“/„it“/„ afterEach“ has the „this“ as the same empty object that is set back to empty for the next spec’s „beforeEach“/„it“/„ afterEach“.
 
@@ -170,6 +371,39 @@ Test double function called spies can be defined by Jasmine. Any function can be
 \item The „toHaveBeenCalledTimes“ matcher will pass if the spy was called the specified number of times.
 \item The „toHaveBeenCalledWith“ matcher will return true if the argument list matches any of the recorded calls to the spy.
 \end{itemize}
+
+\begin{lstlisting}[caption=Spy usage]
+describe("A spy", function() {
+    var foo, bar = null;
+
+    beforeEach(function() {
+        foo = {
+            setBar: function(value) {
+                bar = value;
+            }
+        };
+
+        spyOn(foo, 'setBar');
+
+        foo.setBar(123);
+        foo.setBar(456, 'another param');
+    });
+
+    it("tracks that the spy was called", function() {
+        expect(foo.setBar).toHaveBeenCalled();
+    });
+
+    it("tracks all the arguments of its calls", function() {
+        expect(foo.setBar).toHaveBeenCalledWith(123);
+        expect(foo.setBar).toHaveBeenCalledWith(456,
+            'another param');
+    });
+
+    it("stops all execution on a function", function() {
+        expect(bar).toBeNull();
+    });
+});
+\end{lstlisting}
 
 More others functions can be call by chaining the spy with:
 
@@ -188,6 +422,59 @@ Karma-coverage is a npm peer dependency to generate test report using the „Ist
 \textdollar{} npm install karma karma-coverage --save-dev
 
 Then the developper can configurate the plugin using the karma.conf.je file. The Abbildung 7 shows how to configurate a karma-coverage plugin after install it to genarate Test reports.
+
+\begin{lstlisting}[caption=Karma-coverage configuration's file]
+// karma.conf.js  
+module.exports = function(config) {
+    config.set({
+        files: [
+            'src/**/*.js',
+            'test/**/*.js'
+        ],
+        reporters: ['progress', 'coverage'],
+        preprocessors: {
+            'src/**/*.js': ['coverage']
+        },
+        coverageReporter: {
+            // specify a common output directory  
+            dir: 'build/reports/coverage',
+            reporters: [
+                // reporters not supporting the `file` property  
+                {
+                    type: 'html',
+                    subdir: 'report-html'
+                }, {
+                    type: 'lcov',
+                    subdir: 'report-lcov'
+                },
+                // reporters supporting the `file` property, use `subdir` to directly  
+                // output them in the `dir` directory  
+                {
+                    type: 'cobertura',
+                    subdir: '.',
+                    file: 'cobertura.txt'
+                }, {
+                    type: 'lcovonly',
+                    subdir: '.',
+                    file: 'report-lcovonly.txt'
+                }, {
+                    type: 'teamcity',
+                    subdir: '.',
+                    file: 'teamcity.txt'
+                }, {
+                    type: 'text',
+                    subdir: '.',
+                    file: 'text.txt'
+                }, {
+                    type: 'text-summary',
+                    subdir: '.',
+                    file: 'text-summary.txt'
+                },
+            ]
+        }
+    });
+};
+\end{lstlisting}
 
 \section{TDD - Best Practices}
 In this part some of the best practices to be followed in TDD projects are presented:
