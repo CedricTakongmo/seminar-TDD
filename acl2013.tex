@@ -18,7 +18,7 @@
 \usepackage{times}
 \usepackage{url}
 \usepackage{latexsym}
-\usepackage{graphicx}  
+\usepackage{graphicx}
 \graphicspath{ {img/} }
 \usepackage{listings}
 \usepackage{color}
@@ -27,34 +27,34 @@
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
 
 \lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
+keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+keywordstyle=\color{blue}\bfseries,
+ndkeywords={class, export, boolean, throw, implements, import, this},
+ndkeywordstyle=\color{darkgray}\bfseries,
+identifierstyle=\color{black},
+sensitive=false,
+comment=[l]{//},
+morecomment=[s]{/*}{*/},
+commentstyle=\color{purple}\ttfamily,
+stringstyle=\color{red}\ttfamily,
+morestring=[b]',
+morestring=[b]"
 }
 
 \lstset{
-   language=JavaScript,
-   backgroundcolor=\color{lightgray},
-   extendedchars=true,
-   basicstyle=\footnotesize\ttfamily,
-   showstringspaces=false,
-   showspaces=false,
-   numbers=left,
-   numberstyle=\footnotesize,
-   numbersep=9pt,
-   tabsize=2,
-   breaklines=true,
-   showtabs=false,
-   captionpos=b
+language=JavaScript,
+backgroundcolor=\color{lightgray},
+extendedchars=true,
+basicstyle=\footnotesize\ttfamily,
+showstringspaces=false,
+showspaces=false,
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=9pt,
+tabsize=2,
+breaklines=true,
+showtabs=false,
+captionpos=b
 }
 
 %\setlength\titlebox{6.5cm}    % You can expand the title box if you
@@ -86,11 +86,18 @@ A software product has to be considered like every other commercial product and 
 
 In this context of Code Quality and Unit Testing in JavaScript, Test-driven development (TDD) is the new trend. TDD is a new way to software development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring. What is the primary goal of TDD? One view is the goal of TDD is specification and not validation (Martin, Newkirk, and Kess 2003). In other words, it’s one way to think through your requirements or design before your write your functional code (implying that TDD is both an important agile requirements and agile design technique). Another view is that TDD is a programming technique. As Ron Jeffries likes to say, the goal of TDD is to write clean code that works. I think that there is merit in both arguments, although I lean towards the specification view, but I leave it for you to decide. 
 
-\includegraphics[scale=0.3]{Motivation.png}
+\begin{figure}[!ht]
+\includegraphics[scale=0.45]{Motivation.png}
+  \caption{Evolution of Programming Languages}
+\end{figure}
+
 \section{Test-driven development cycle}
 TDD can be described, as explained in, with this simple formula: TDD = The steps of test first development (TFD) + a Refactoring. TFD are overviewed in the UML activity diagram of Abbildung 2. With this approach a test should be quickly added. Normally just enough code to fail. After that the tests should be run, often the complete test suite although for sake of speed you may decide to run only a subset, to ensure that the new test does in fact fail. Then, You update your functional code to make it should pass the new tests. The fourth step is to run your tests again. If they fail you need to update your functional code and retest. Once the tests pass the next step is to start over (you may first need to refactor any duplication out of your design as needed, turning TFD into TDD).
 
+\begin{figure}[!ht]
 \includegraphics[scale=0.8]{TFD.png}
+  \caption{The steps of test first development}
+\end{figure}
 
 \section{Benefits of TDD}
 
@@ -110,7 +117,7 @@ Karma is a test runner for JavaScript that runs on Node.js. It is very well suit
 \textdollar{} karma init
 
 In this way, the created configuration file is then as follows:
-
+\pagebreak
 \begin{lstlisting}[caption=Karma configuration file ]
        module.exports = function(config) {  
            config.set({  
@@ -215,6 +222,8 @@ Jasmine is an open source Javascript Unit Test Framework. It is behavior-driven 
 \subsection{Suites}
 
 A test suite represents a group of specifications. The global Jasmine function describe defines a test suite. This function takes two parameters: a string and a closure. The title or name for a spec suite is defined by the string. It is usually what is being tested. A block of code that will be implemented will be wrote in the function.
+
+\pagebreak
 
 \begin{lstlisting}[caption=Suites example]
        'use strict';  
@@ -321,6 +330,8 @@ it('Custum matchers', function() {
 
 Related specs can be grouped by the „describe“ function. The string parameter is for naming the collection of specs, and will be concatenated with specs to make a spec’s full name. This is usefull in finding specs in a large suite. specs can be read as full sentences in traditional BDD style, if they are good named in the test blocks. Any duplicated setup and teardown code can be implemented in the global „beforeEach“, „afterEach“, „beforeAll“ and „afterAll“ functions. The „beforeEach“ function is called in the „describe“ in which it is called once before each spec. The „afterEach“ function is used once after each spec.
 
+\pagebreak
+
 \begin{lstlisting}[caption=Setup and Teardown]
 describe('StackCtrl', function() {
 
@@ -421,7 +432,9 @@ Karma-coverage is a npm peer dependency to generate test report using the „Ist
 
 \textdollar{} npm install karma karma-coverage --save-dev
 
-Then the developper can configurate the plugin using the karma.conf.je file. The Abbildung 7 shows how to configurate a karma-coverage plugin after install it to genarate Test reports.
+Then the developper can configurate the plugin using the karma.conf.je file. The following code shows how to configurate a karma-coverage plugin after install it to genarate Test reports.
+
+\pagebreak
 
 \begin{lstlisting}[caption=Karma-coverage configuration's file]
 // karma.conf.js  
@@ -489,8 +502,34 @@ In this part some of the best practices to be followed in TDD projects are prese
 \item Know when to use TDD
 \end{itemize}
 
-\section{Summary}
+\section{What are the benefits and disadvantages?}
+Agile development methodology has grown dominant over the last decade. Speed to market is increasingly the most important thing for developers and they are looking to boost the frequency of software releases. Greater efficiency in the process is required today towards continuous delivery and many developers are relying on automated unit tests, or pushing further into Test-Driven Development.
 
+The idea behind Test-Driven Development was, as described, to write the tests before writing the code. This must to encourage the developers to stay laser-focused on their goal, only building the featurse that’s required to pass the test. This approach has potential advantages and pitfalls.
+
+Proponents of Test-driven development suggest that it leads to higher quality software in less time, which is effectively saving money from a management point of view. If we drill down there are various pros to TDD such as:
+\begin{itemize}
+\item It can lead to simple, elegant, modular code.
+\item It can help developers find defects and bugs earlier than they otherwise would and it’s a commonly held belief that a bug is cheaper to fix the earlier you find it.
+\item The tests can serve as a kind of live documentation and make the code much easier to understand.
+\item It’s easier to maintain and refactor code, your own and other programmer’s code.
+\item It can speed up development in the long term.
+\item It can encourage developers to think from an end user point of view.
+\end{itemize}
+In the absence of a lot of statistical evidence it’s tough to say TDD definitely delivers and there’s no such thing as a one-size-fits-all solution in software development. Now let’s take a look at some of the potential disadvantages:
+\begin{itemize}
+\item It necessitates a lot of time and effort up front which can make development feel slow to begin with.
+\item Focusing on the simplest design now and not thinking ahead can mean major refactoring requirements.
+\item It’s difficult to write good tests that cover the essentials and avoid the superfluous.
+\item It takes time and effort to maintain the test suite and it must be reconfigured for maximum value.
+\item If the design is changing rapidly then you’ll need to keep changing your tests. You could end up wasting a lot of time writing tests for features that are quickly dropped.
+\end{itemize}
+
+Each of JavaScript test frameworks has advantages and disadvantages. It is also valid for Jasmine. The most important advantage of Jasmine is it behaviour-driven development (BDD) aspect. BDD engages shareholders and the delivery team with different views on the same page and makes sure that all have the same expectations. BDD begins with the business goal. The goal of behaviour-driven testing is a business readable and domain specific language that allows you to describe a behavior of a system without putting details on how that behavior is developed. In BDT, Tests in the form of simple text features/descriptions with scenarios are typically written before anything else and checked by the non-technical shareholders. Cucumber is an optimized tool for BDD, which can execute simple-text functional specifications as automated tests. Cucumber supports writing specifications in around 30 spoken languages. Cucumber works with Ruby, Java, .NET, Flex or web applications written in any language. It is both BDD and TDD. Cucumber establishes specifications in different ways like lists, prose and data in tables.
+
+Furthermore, the Jasmine framework don't present a lot problems. The biggest difficulty is that backward compatibility of some functions is just not supported. 
+
+\pagebreak
 
 \begin{thebibliography}{9}
 
@@ -539,6 +578,9 @@ In this part some of the best practices to be followed in TDD projects are prese
 
 \bibitem{KarmCo2016} Karma-runner/karma-coverage: A Karma plugin. Generate code coverage. [Internet]. Friedel Ziegelmayer. 07.2016 [cited 2016 Jul 20]. Available from:
 \newblock {\em https://github.com/karma-runner/karma-coverage}
+
+\bibitem{Thep2016} The pros and cons of Test-Driven Development - Lean software testing tools and resources. [Internet]. Simon Hill. 02.2015 [cited 2016 Jul 20]. Available from:
+\newblock {\em https://leantesting.com/resources/test-driven-development/}
 
 \end{thebibliography}
 
