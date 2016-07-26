@@ -18,7 +18,8 @@
 \usepackage{times}
 \usepackage{url}
 \usepackage{latexsym}
-
+\usepackage{graphicx}  
+\graphicspath{ {img/} }
 %\setlength\titlebox{6.5cm}    % You can expand the title box if you
 % really have to
 
@@ -47,9 +48,11 @@ A software product has to be considered like every other commercial product and 
 
 In this context of Code Quality and Unit Testing in JavaScript, Test-driven development (TDD) is the new trend. TDD is a new way to software development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring. What is the primary goal of TDD? One view is the goal of TDD is specification and not validation (Martin, Newkirk, and Kess 2003). In other words, it’s one way to think through your requirements or design before your write your functional code (implying that TDD is both an important agile requirements and agile design technique). Another view is that TDD is a programming technique. As Ron Jeffries likes to say, the goal of TDD is to write clean code that works. I think that there is merit in both arguments, although I lean towards the specification view, but I leave it for you to decide. 
 
+\includegraphics[scale=0.3]{Motivation.png}
 \section{Test-driven development cycle}
-
 TDD can be described, as explained in, with this simple formula: TDD = The steps of test first development (TFD) + a Refactoring. TFD are overviewed in the UML activity diagram of Abbildung 2. With this approach a test should be quickly added. Normally just enough code to fail. After that the tests should be run, often the complete test suite although for sake of speed you may decide to run only a subset, to ensure that the new test does in fact fail. Then, You update your functional code to make it should pass the new tests. The fourth step is to run your tests again. If they fail you need to update your functional code and retest. Once the tests pass the next step is to start over (you may first need to refactor any duplication out of your design as needed, turning TFD into TDD).
+
+\includegraphics[scale=0.8]{TFD.png}
 
 \section{Benefits of TDD}
 
