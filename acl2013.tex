@@ -18,13 +18,14 @@
 \usepackage{times}
 \usepackage{url}
 \usepackage{latexsym}
+
 %\setlength\titlebox{6.5cm}    % You can expand the title box if you
 % really have to
 
-\title{Instructions for ACL-2013 Proceedings}
+\title{JavaScript Test-Driven Development with Jasmine and Karma}
 
 \author{Cedric Takongmo \\
-  {\tt cedric.takongmo@mni.thm.de}}
+{\tt cedric.takongmo@mni.thm.de}}
 
 \date{}
 
@@ -40,25 +41,24 @@ This document has been wrote on the basis of some external Internet links and a 
 
 \section{Motivation for Javascript TDD}
 
-Today, Javascript is growing in popularity and will continue to grow. As show in the Abbildung 1, from 1996 to 2016, JavaScript is from the 23th to the 7th position of the most used programming languages. JavaScript is also used all over the place, and is used even with every backend language. This programming language is also the most commonly used in frontend development to dynamically give more user experience to web applications. JS-libraries are used for the development of web and mobile applications with JQuery Mobile/PhoneGap. Famous libraries like Angular.js, jQuery, Node.js, React and various others tools inherit JavaScript. Some hardware engineer are using JavaScript to do embedded programming so that JavaScript can be used for the direct communication with the outside world by using MicroControllers and other electronics related stuff, although this is definitely less common at the moment. This is why JavaScript is such a good language to learn. (https://www.quora.com/When-do-developers-use-JavaScript-and-why).
+Today, Javascript is growing in popularity and will continue to grow. As show in the Abbildung 1, from 1996 to 2016, JavaScript is from the 23th to the 7th position of the most used programming languages. JavaScript is also used all over the place, and is used even with every backend language. This programming language is also the most commonly used in frontend development to dynamically give more user experience to web applications. JS-libraries are used for the development of web and mobile applications with JQuery Mobile/PhoneGap. Famous libraries like Angular.js, jQuery, Node.js, React and various others tools inherit JavaScript. Some hardware engineer are using JavaScript to do embedded programming so that JavaScript can be used for the direct communication with the outside world by using MicroControllers and other electronics related stuff, although this is definitely less common at the moment. This is why JavaScript is such a good language to learn.
 
-A software product has to be considered like every other commercial product and it quality must be tested. This is also valid for javaScript Software. In the software engineering, we are talking about Code Quality. Code quality is a loose approximation of how long-term useful and long-term maintainable the code is. If the Code is thrown away tomorrow is mean that this Code has a Low quality. High quality Code is being carried over from product to product, developed further, maybe even open sourced after establishing is value. The software quality is defined with a clear and understandable design and implementation and also well defined interfaces. Good Code is ease to build and use and have to be extensible. The minimum extra dependencies and the good documentation are very important criteria for Software Quality. One off he most important criteria are the tests: Unit, integration, and functional/acceptance testing. (https://www.quora.com/How-do-you-define-code-quality)
+A software product has to be considered like every other commercial product and it quality must be tested. This is also valid for javaScript Software. In the software engineering, we are talking about Code Quality. Code quality is a loose approximation of how long-term useful and long-term maintainable the code is. If the Code is thrown away tomorrow is mean that this Code has a Low quality. High quality Code is being carried over from product to product, developed further, maybe even open sourced after establishing is value. The software quality is defined with a clear and understandable design and implementation and also well defined interfaces. Good Code is ease to build and use and have to be extensible. The minimum extra dependencies and the good documentation are very important criteria for Software Quality. One off he most important criteria are the tests: Unit, integration, and functional/acceptance testing.
 
 In this context of Code Quality and Unit Testing in JavaScript, Test-driven development (TDD) is the new trend. TDD is a new way to software development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring. What is the primary goal of TDD? One view is the goal of TDD is specification and not validation (Martin, Newkirk, and Kess 2003). In other words, it’s one way to think through your requirements or design before your write your functional code (implying that TDD is both an important agile requirements and agile design technique). Another view is that TDD is a programming technique. As Ron Jeffries likes to say, the goal of TDD is to write clean code that works. I think that there is merit in both arguments, although I lean towards the specification view, but I leave it for you to decide. 
 
 \section{Test-driven development cycle}
 
-TDD can be described with this simple formula: TDD = The steps of test first development (TFD) + a Refactoring. TFD are overviewed in the UML activity diagram of Abbildung 2. With this approach a test should be quickly added. Normally just enough code to fail. After that the tests should be run, often the complete test suite although for sake of speed you may decide to run only a subset, to ensure that the new test does in fact fail. Then, You update your functional code to make it should pass the new tests. The fourth step is to run your tests again. If they fail you need to update your functional code and retest. Once the tests pass the next step is to start over (you may first need to refactor any duplication out of your design as needed, turning TFD into TDD) (http://agiledata.org/essays/tdd.html )
+TDD can be described, as explained in, with this simple formula: TDD = The steps of test first development (TFD) + a Refactoring. TFD are overviewed in the UML activity diagram of Abbildung 2. With this approach a test should be quickly added. Normally just enough code to fail. After that the tests should be run, often the complete test suite although for sake of speed you may decide to run only a subset, to ensure that the new test does in fact fail. Then, You update your functional code to make it should pass the new tests. The fourth step is to run your tests again. If they fail you need to update your functional code and retest. Once the tests pass the next step is to start over (you may first need to refactor any duplication out of your design as needed, turning TFD into TDD).
 
 \section{Benefits of TDD}
 
 TDD enables you to take small steps when writing software. This is the most important thing of this concept. This practice is far more productive than attempting to code in large steps. For example, assume some new functional code have been added to code, compiled, and tested. Chances are important that your tests will be broken by defects that exist in the new code. It is much easier to find, and then fix, those defects if you've written two new lines of code than two thousand. The implication is that the faster your compiler and regression test suite, the more attractive it is to proceed in smaller and smaller steps. I generally prefer to add a few new lines of functional code, typically less than ten, before I recompile and rerun my tests.
 
 
-
 \section{Karma}
 
-Karma is a test runner for JavaScript that runs on Node.js. It is very well suited to testing any JavaScript projects. Using Karma to run tests using one of many popular JavaScript testing suites (Jasmine, QUnit, Mocha, etc.) and have those tests executed not only in the browsers of your choice, but also on any platform (desktop, phone, tablet.) Karma is highly configurable, integrates with popular continuous integration packages (Jenkins, Travis, and Semaphore) and has excellent plugin support. (http://www.methodsandtools.com/tools/karma.php ) Karma is an Open Source distribution and actually in the version 1.0.
+Karma is a test runner for JavaScript that runs on Node.js. It is very well suited to testing any JavaScript projects. Using Karma to run tests using one of many popular JavaScript testing suites (Jasmine, QUnit, Mocha, etc.) and have those tests executed not only in the browsers of your choice, but also on any platform (desktop, phone, tablet.) Karma is highly configurable, integrates with popular continuous integration packages (Jenkins, Travis, and Semaphore) and has excellent plugin support. Karma is an Open Source distribution and actually in the version 1.0.
 
 \begin{itemize}
 \item Installation - Karma requires Node.js and the Node Package Manager (NPM). So we can install Karma with the simple command:
@@ -73,7 +73,7 @@ In this way, the created configuration file is then as follows:
 
 \textdollar{} karma start [path/to/config/file.js]
 
-All tests are now performed and Karma wait for code changes. while tests succeed, Karma will automatically start another test run. In the case of faulty test the result will be show in the console. In this case karma waits for an update or correction of JavaScript code. (https://blog.mayflower.de/4333-Karma-Testrunner-Einfuehrung.html )
+All tests are now performed and Karma wait for code changes. while tests succeed, Karma will automatically start another test run. In the case of faulty test the result will be show in the console. In this case karma waits for an update or correction of JavaScript code.
 \end{itemize}
 
 \section{PhantomJS}
@@ -98,264 +98,161 @@ Among those use cases some features are implemented in PhantomJS:
 \item PhantomJS is easy to install: Download, unpack, and start having fun in just 5 minutes.
 \end{itemize}
 
-\subsection{Layout}
-\label{ssec:layout}
+\section{Jasmine}
 
-Format manuscripts two columns to a page, in the manner these
-instructions are formatted. The exact dimensions for a page on A4
-paper are:
+Jasmine is an open source Javascript Unit Test Framework. It is behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests. Now we will see how this framework is structured. The main particularities of Jasmine are:
 
 \begin{itemize}
-\item Left and right margins: 2.5 cm
-\item Top margin: 2.5 cm
-\item Bottom margin: 2.5 cm
-\item Column width: 7.7 cm
-\item Column height: 24.7 cm
-\item Gap between columns: 0.6 cm
+\item test Suite has a hierarchical structure,
+\item tests integrated as specification,
+\item matchers, both built-in and custom,
+\item Setup and Teardown,
+\item Spies, a test double pattern.
 \end{itemize}
 
-\noindent Papers should not be submitted on any other paper size.
- If you cannot meet the above requirements about the production of your electronic submission, please contact the publication chairs above as soon as possible.
+\subsection{Suites}
+
+A test suite represents a group of specifications. The global Jasmine function describe defines a test suite. This function takes two parameters: a string and a closure. The title or name for a spec suite is defined by the string. It is usually what is being tested. A block of code that will be implemented will be wrote in the function.
+
+\subsection{Specs}
+
+The global jasmine function „it“ define specs. This function, like „describe“ takes a string and a function. The title of the spec is defined by the string and the function is the spec, or test. One or more expectations that verify the state of the code are contained in a spec. In Jasmine an expectation is an assertion. This assertion can be true or false. A passing spec is a spec with all true expectations. A falling spec is rather a spec with one or more false expectations. 
+
+Because the „describe“ and „it“ are function, ana executable code necessary to implement the spec can be defined in these blocks. So variables declared in a describe are available to any it block inside the suite.
+
+\subsection{Expectations}
+
+The function „expect“ is necessary to build expectations. This function takes an argument called the actual and is chained with a matcher function, which takes the expected value. A boolean comparison between the actual and the expected value will be implemented by each matcher. This matcher should report to Jasmine if the expectation is true or false. Then Jasmine decides if the spec pass or fails. With a „not“ before calling the matcher any matcher can evaluate to a negative chaining. Here is a list of most used matchers:
+
+\begin{itemize}
+\item expect(fn).toThrow(e);
+\item expect(instance).toBe(instance);
+\item expect(mixed).toBeDefined();
+\item expect(mixed).toBeFalsy();
+\item expect(number).toBeGreaterThan(number);
+\item expect(number).toBeLessThan(number);
+\item expect(mixed).toBeNull();
+\item expect(mixed).toBeTruthy();
+\item expect(mixed).toBeUndefined();
+\item expect(array).toContain(member);
+\item expect(string).toContain(substring);
+\item expect(mixed).toEqual(mixed);
+\item expect(mixed).toMatch(pattern);
+\end{itemize}
+
+Negative matchers can be call as followed:
+
+\begin{itemize}
+\item expect(instance).not.toBe(instance);
+\item expect(mixed).not.toBeDefined();
+\item expect(mixed).not.toBeFalsy();
+\end{itemize}
+
+The fail function brings a spec to fail. A failure message or an Error object can be take as parameter.
+
+Custom matching code can be defined using Jasmine. A custom matcher can be defined as a comparison function, which take an „actual“ value and an „expected“ value. Then the custom factory should be passed to Jasmine. The best practice to do that is to pass it in the „beforeEach“ and it will be in scope and available for all of the specs inside a given call to „describe“. Custom matchers are destroyed between specs. The name of the factory will be the name of the matcher exposed on the return value of the call to „expect“. This object has a custom matcher named “toBeGoofy”. 
+
+\subsection{Setup and Teardown}
+
+Related specs can be grouped by the „describe“ function. The string parameter is for naming the collection of specs, and will be concatenated with specs to make a spec’s full name. This is usefull in finding specs in a large suite. specs can be read as full sentences in traditional BDD style, if they are good named in the test blocks. Any duplicated setup and teardown code can be implemented in the global „beforeEach“, „afterEach“, „beforeAll“ and „afterAll“ functions. The „beforeEach“ function is called in the „describe“ in which it is called once before each spec. The „afterEach“ function is used once after each spec.
+
+The Abbildung 4 represents an example for „beforeEach“ and „afterEach“. In this case a state will be give to the „scope“ object we want to test before each test. Jasmine calls the „beforeAll“ function only once before all the specs in the test suite are run, and the „afterAll“ after all specs finish. These functions can be used to speed up test suites with expensive setup and teardown. Through the „this“ keyword variables between a „beforeEach“, „it“, and „afterEach“ function can be shared. Each spec’s „beforeEach“/„it“/„ afterEach“ has the „this“ as the same empty object that is set back to empty for the next spec’s „beforeEach“/„it“/„ afterEach“.
+
+\subsection{Spies}
+
+Test double function called spies can be defined by Jasmine. Any function can be stub by a spy ,which can tracks call to it and all arguments. definition area of a spy ist he „describe“ and the „it“ block in which it is defined. The spy will be destroyed after each spec. Some important matcher after a spy action are:
+
+\begin{itemize}
+\item The „toHaveBeenCalled“ matcher will return true if the spy was called.
+\item The „toHaveBeenCalledTimes“ matcher will pass if the spy was called the specified number of times.
+\item The „toHaveBeenCalledWith“ matcher will return true if the argument list matches any of the recorded calls to the spy.
+\end{itemize}
+
+More others functions can be call by chaining the spy with:
+
+\begin{itemize}
+\item and.callThrough: the spy will still track all calls to it but in addition it will delegate to the actual implementation.
+\item and.returnValue: all calls to the function will return a specific value.
+\item and.callFake: all calls to the spy will delegate to the supplied function.
+\item and.throwError: all calls to the spy will throw the specified value as an error.
+\item and.stub: the original stubbing behavior can be returned at any time.
+\end{itemize}
+
+\section{Karma-coverage}
+
+Karma-coverage is a npm peer dependency to generate test report using the „Istanbul“ library. This plugin can be simply installed by the command:
+
+\textdollar{} npm install karma karma-coverage --save-dev
+
+Then the developper can configurate the plugin using the karma.conf.je file. The Abbildung 7 shows how to configurate a karma-coverage plugin after install it to genarate Test reports.
+
+\section{TDD - Best Practices}
+In this part some of the best practices to be followed in TDD projects are presented:
+
+\begin{itemize}
+\item Avoid functional complexity
+\item Focus on what you need to achieve
+\item Maintain code austerity: Ensure your code has just enough meat to satisfy your test case
+\item Test repeatedly
+\item Maintain code sanctity
+\item Application knowledge
+\item Know when to use TDD
+\end{itemize}
+
+\section{Summary}
 
 
-% Removed by KO  we are not accepting printed papers any more!!!
-%  Exceptionally,
-% authors for whom it is \emph{impossible} to print on A4 paper may use
-% \emph{US Letter} paper. In this case, they should keep the \emph{top}
-% and \emph{left} margins as given above, use the same column width,
-% height and gap, and modify the bottom and right margins as
-% necessary. Note that the text will no longer be centered.
+\begin{thebibliography}{9}
 
-\subsection{Fonts}
+\bibitem{When2016} When do developers use JavaScript and why? - Quora. [Internet]. [cited 2016 Jul 20]. Available from:
+\newblock {\em https://www.quora.com/When-do-developers-use-JavaScript-and-why}
 
-For reasons of uniformity, Adobe's {\bf Times Roman} font should be
-used. In \LaTeX2e{} this is accomplished by putting
+\bibitem{Howt2016} How to define code quality - Quora. [Internet]. [cited 2016 Jul 20]. Available from:
+\newblock {\em https://www.quora.com/How-do-you-define-code-quality}
 
-\begin{quote}
-\begin{verbatim}
-\usepackage{times}
-\usepackage{latexsym}
-\end{verbatim}
-\end{quote}
-in the preamble. If Times Roman is unavailable, use {\bf Computer
-  Modern Roman} (\LaTeX2e{}'s default).  Note that the latter is about
-  10\% less dense than Adobe's Times Roman font.
+\bibitem{Kent2003} Kent Beck
+\newblock 2003.
+\newblock {\em Test Driven Development: By Example}, 1st Edition.
+\newblock Addison Wesley, Boston, MA.
 
+\bibitem{Davi2003} David Astels
+\newblock 2003.
+\newblock {\em Test-Driven Development: A Practical Guide: A Practical Guide}, 1st Edition.
+\newblock Pearson Education, Upper Saddle River, NJ.
 
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{|l|rl|}
-\hline \bf Type of Text & \bf Font Size & \bf Style \\ \hline
-paper title & 15 pt & bold \\
-author names & 12 pt & bold \\
-author affiliation & 12 pt & \\
-the word ``Abstract'' & 12 pt & bold \\
-section titles & 12 pt & bold \\
-document text & 11 pt  &\\
-captions & 11 pt & \\
-abstract text & 10 pt & \\
-bibliography & 10 pt & \\
-footnotes & 9 pt & \\
-\hline
-\end{tabular}
-\end{center}
-\caption{\label{font-table} Font guide. }
-\end{table}
+\bibitem{Maxg2013} Max Guernsey III 
+\newblock 2013.
+\newblock {\em Test-Driven Database Development: Unlocking Agility (Net Objectives Lean-Agile Series)}, 1st Edition.
+\newblock Pearson Education, USA.
 
-\subsection{The First Page}
-\label{ssec:first}
+\bibitem{Gojk2011} Gojko Adzic
+\newblock 2011.
+\newblock {\em Specification by Example: How Successful Teams Deliver the Right Software}, 1st Edition.
+\newblock Manning Publications Co., Shelter Island, NJ.
 
-Center the title, author's name(s) and affiliation(s) across both
-columns. Do not use footnotes for affiliations. Do not include the
-paper ID number assigned during the submission process. Use the
-two-column format only when you begin the abstract.
+\bibitem{Intr2013} Introduction to Test Driven Development (TDD). [Internet]. Ambysoft Inc. 2013 [cited 2016 Jul 20]. Available from: \newblock {\em http://agiledata.org/essays/tdd.html\#PartingThoughts}
 
-{\bf Title}: Place the title centered at the top of the first page, in
-a 15-point bold font. (For a complete guide to font sizes and styles, see Table~\ref{font-table}) Long titles should be typed on two lines without
-a blank line intervening. Approximately, put the title at 2.5 cm from
-the top of the page, followed by a blank line, then the author's
-names(s), and the affiliation on the following line. Do not use only
-initials for given names (middle initials are allowed). Do not format surnames
-in all capitals (e.g., use ``Schlangen'' not ``SCHLANGEN'').
-Do not format title and section headings in all capitals as well
-except for proper names (such as ``BLEU'') that are conventionally
-in all capitals.
-The affiliation should contain the author's complete address, and if
-possible, an electronic mail address. Leave about 2 cm between the
-affiliation and the body of the first page.
-The title, author names and addresses should be completely
-identical to those entered to the electronical paper submission
-website in order to maintain the consistency of author information
-among all publications of the conference.
+\bibitem{Karm2013} Karma - a Javascript Test Runner. [Internet]. Michael G Bielski. 2013 [cited 2016 Jul 20]. Available from:
+\newblock {\em http://www.methodsandtools.com/tools/karma.php}
 
-{\bf Abstract}: Type the abstract at the beginning of the first
-column. The width of the abstract text should be smaller than the
-width of the columns for the text in the body of the paper by about
-0.6 cm on each side. Center the word {\bf Abstract} in a 12 point bold
-font above the body of the abstract. The abstract should be a concise
-summary of the general thesis and conclusions of the paper. It should
-be no longer than 200 words. The abstract text should be in 10 point font.
+\bibitem{Java2013} JavaScript Tests mit Karma schnell an den Start bringen - Mayflower Blog. [Internet]. Norbert Schmidt. 2013 [cited 2016 Jul 20]. Available from:
+\newblock {\em https://blog.mayflower.de/4333-Karma-Testrunner-Einfuehrung.html}
 
-{\bf Text}: Begin typing the main body of the text immediately after
-the abstract, observing the two-column format as shown in 
-the present document. Do not include page numbers.
+\bibitem{phan2016} phantomjs/README.md at master · ariya/phantomjs [Internet]. Ariya Hidayat. 01.2016 [cited 2016 Jul 20]. Available from:
+\newblock {\em https://github.com/ariya/phantomjs}
 
-{\bf Indent} when starting a new paragraph. Use 11 points for text and 
-subsection headings, 12 points for section headings and 15 points for
-the title. 
+\bibitem{cust2016} custom\_matcher.js [Internet]. Pivotal Labs. 2016 [cited 2016 Jul 20]. Available from:
+\newblock {\em http://jasmine.github.io/edge/custom\_matcher.html}
 
-\subsection{Sections}
+\bibitem{intr2016} introduction.js [Internet]. Pivotal Labs. 2016 [cited 2016 Jul 20]. Available from:
+\newblock {\em http://jasmine.github.io/2.0/introduction.html\#section-Spies}
 
-{\bf Headings}: Type and label section and subsection headings in the
-style shown on the present document.  Use numbered sections (Arabic
-numerals) in order to facilitate cross references. Number subsections
-with the section number and the subsection number separated by a dot,
-in Arabic numerals. Do not number subsubsections.
-
-{\bf Citations}: Citations within the text appear
-in parentheses as~\cite{Gusfield:97} or, if the author's name appears in
-the text itself, as Gusfield~\shortcite{Gusfield:97}. 
-Append lowercase letters to the year in cases of ambiguity.  
-Treat double authors as in~\cite{Aho:72}, but write as in~\cite{Chandra:81} when more than two authors are involved. Collapse multiple citations as in~\cite{Gusfield:97,Aho:72}. Also refrain from using full citations as sentence constituents. We suggest that instead of
-\begin{quote}
-  ``\cite{Gusfield:97} showed that ...''
-\end{quote}
-you use
-\begin{quote}
-``Gusfield \shortcite{Gusfield:97}   showed that ...''
-\end{quote}
-
-If you are using the provided \LaTeX{} and Bib\TeX{} style files, you
-can use the command \verb|\newcite| to get ``author (year)'' citations.
-
-As reviewing will be double-blind, the submitted version of the papers should not include the
-authors' names and affiliations. Furthermore, self-references that
-reveal the author's identity, e.g.,
-\begin{quote}
-``We previously showed \cite{Gusfield:97} ...''  
-\end{quote}
-should be avoided. Instead, use citations such as 
-\begin{quote}
-``Gusfield \shortcite{Gusfield:97}
-previously showed ... ''
-\end{quote}
-
-\textbf{Please do not  use anonymous citations} and  do not include acknowledgements when submitting your papers. Papers that do not conform
-to these requirements may be rejected without review. 
-
-\textbf{References}: Gather the full set of references together under
-the heading {\bf References}; place the section before any Appendices,
-unless they contain references. Arrange the references alphabetically
-by first author, rather than by order of occurrence in the text.
-Provide as complete a citation as possible, using a consistent format,
-such as the one for {\em Computational Linguistics\/} or the one in the 
-{\em Publication Manual of the American 
-Psychological Association\/}~\cite{APA:83}.  Use of full names for
-authors rather than initials is preferred.  A list of abbreviations
-for common computer science journals can be found in the ACM 
-{\em Computing Reviews\/}~\cite{ACM:83}.
-
-The \LaTeX{} and Bib\TeX{} style files provided roughly fit the
-American Psychological Association format, allowing regular citations, 
-short citations and multiple citations as described above.
-
-{\bf Appendices}: Appendices, if any, directly follow the text and the
-references (but see above).  Letter them in sequence and provide an
-informative title: {\bf Appendix A. Title of Appendix}.
-
-\textbf{Acknowledgement} section should go as a last section immediately
-before the references.  Do not number the acknowledgement section.
-
-\subsection{Footnotes}
-
-{\bf Footnotes}: Put footnotes at the bottom of the page and use 9
-points text. They may be numbered or referred to by asterisks or other
-symbols.\footnote{This is how a footnote should appear.} Footnotes
-should be separated from the text by a line.\footnote{Note the line
-separating the footnotes from the text.}
-
-\subsection{Graphics}
-
-{\bf Illustrations}: Place figures, tables, and photographs in the
-paper near where they are first discussed, rather than at the end, if
-possible.  Wide illustrations may run across both columns.  Color
-illustrations are discouraged, unless you have verified that  
-they will be understandable when printed in black ink.
-
-{\bf Captions}: Provide a caption for every illustration; number each one
-sequentially in the form:  ``Figure 1. Caption of the Figure.'' ``Table 1.
-Caption of the Table.''  Type the captions of the figures and 
-tables below the body, using 11 point text.  
-
-\section{Translation of non-English Terms}
-
-It is also advised to supplement non-English characters and terms
-with appropriate transliterations and/or translations
-since not all readers understand all such characters and terms.
-Inline transliteration or translation can be represented in
-the order of: original-form transliteration ``translation''.
-
-\section{Length of Submission}
-\label{sec:length}
-
-Long papers may consist of up to 8 pages of content, plus two extra pages for references
-and short papers may consist of up to 4 pages of content, plus two extra pages for references, in the proceedings.
-Papers that do not conform to the specified length and formatting requirements are
-subject to be rejected without review.
-
-\section{Other Issues}
-
-Those papers that had software and/or dataset submitted for the review process should also submit it 
-with the camera-ready paper. Besides, the software and/or dataset should not be anonymous. 
-
-Please note that the publications of ACL 2013 will be publicly available at ACL Anthology 
-(http://aclweb.org/anthology-new/) on July 28th, 2013, one week before the start of the conference. 
-Since some of the authors may have plans to file patents related to their papers in the conference, 
-we are sending this reminder that July 28th, 2013 may be considered to be the official publication date, 
-instead of the opening day of the conference.
-
-\section*{Acknowledgments}
-
-Do not number the acknowledgment section. Do not include this section
-when submitting your paper for review.
-%\bibliographystyle{acl}
-% you bib file should really go here 
-%\bibliography{acl2013}
-
-\begin{thebibliography}{}
-
-\bibitem[\protect\citename{Aho and Ullman}1972]{Aho:72}
-Alfred~V. Aho and Jeffrey~D. Ullman.
-\newblock 1972.
-\newblock {\em The Theory of Parsing, Translation and Compiling}, volume~1.
-\newblock Prentice-{Hall}, Englewood Cliffs, NJ.
-
-\bibitem[\protect\citename{{American Psychological Association}}1983]{APA:83}
-{American Psychological Association}.
-\newblock 1983.
-\newblock {\em Publications Manual}.
-\newblock American Psychological Association, Washington, DC.
-
-\bibitem[\protect\citename{{Association for Computing Machinery}}1983]{ACM:83}
-{Association for Computing Machinery}.
-\newblock 1983.
-\newblock {\em Computing Reviews}, 24(11):503--512.
-
-\bibitem[\protect\citename{Chandra \bgroup et al.\egroup }1981]{Chandra:81}
-Ashok~K. Chandra, Dexter~C. Kozen, and Larry~J. Stockmeyer.
-\newblock 1981.
-\newblock Alternation.
-\newblock {\em Journal of the Association for Computing Machinery},
-  28(1):114--133.
-
-\bibitem[\protect\citename{Gusfield}1997]{Gusfield:97}
-Dan Gusfield.
-\newblock 1997.
-\newblock {\em Algorithms on Strings, Trees and Sequences}.
-\newblock Cambridge University Press, Cambridge, UK.
+\bibitem{KarmCo2016} Karma-runner/karma-coverage: A Karma plugin. Generate code coverage. [Internet]. Friedel Ziegelmayer. 07.2016 [cited 2016 Jul 20]. Available from:
+\newblock {\em https://github.com/karma-runner/karma-coverage}
 
 \end{thebibliography}
 
 \end{document}
+\grid
 \grid
 \grid
